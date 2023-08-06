@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Aula1Angular';
+  alunos = [
+    "Matheus",
+    "Carlos",
+    "Cristian",
+    "João"
+  ]
+  message!: string;
+
+  receiveMessage(event: string) {
+    this.message = event;
+  }
 }
