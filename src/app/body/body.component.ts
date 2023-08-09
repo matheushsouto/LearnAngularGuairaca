@@ -11,6 +11,8 @@ export class BodyComponent {
   /** Output - Criando um event emitter para enviar informação
    * para o componente pai */
   @Output() messageEvent = new EventEmitter<string>();
+  isSendMessage: boolean = false;
+  isBackGroundColor = 'orange ';
 
   constructor() {
     console.log(this.message);
@@ -18,6 +20,7 @@ export class BodyComponent {
 
   /** Metódo para enviar informaçoes para o pai */
   sendMessage() {
+    this.isSendMessage = true;
     this.messageEvent.emit('Passando valor para pai');
   }
 }

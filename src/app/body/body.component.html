@@ -1,7 +1,7 @@
 <!-- Percorrendo array através do NgFor-->
 <div *ngFor="let aluno of message">
-  <p>{{ aluno }}</p>
+  <p [ngStyle]="{'background-color': isBackGroundColor}" [ngClass]="{'isCarlos': aluno == 'Carlos'}">{{ aluno }}</p>
 </div>
 
 <!-- Acionando função para enviar dados para o componente pai -->
-<button (click)="sendMessage()">Enviar</button>
+<button *ngIf="!isSendMessage" (click)="sendMessage()">Enviar</button>
