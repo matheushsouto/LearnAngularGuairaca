@@ -1,0 +1,11 @@
+<!-- Componente header -->
+<app-header></app-header>
+
+<!-- Componente Filho-->
+<app-body [message]="alunos" (messageEvent)="receiveMessage($event)"></app-body>
+
+<!-- Componente de Rodapé -->
+<app-footer></app-footer>
+
+<!-- Dados vindo do componente filho -->
+<h1>{{message}}</h1>
