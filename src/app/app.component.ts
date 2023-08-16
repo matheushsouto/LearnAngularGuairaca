@@ -17,5 +17,4 @@ export class AppComponent {
   receiveMessage(event: string) {
     this.message = event;
   }
-
 }
