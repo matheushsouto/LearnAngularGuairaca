@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ContadorService } from './../service/contador.service';
 import { Component } from '@angular/core';
 
@@ -9,7 +10,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   public users!: string[];
   constructor(
-    private contadorService: ContadorService)
+    private contadorService: ContadorService,
+    private router: Router
+    )
     {
       this.getUsers();
       console.log(this.users);
@@ -17,5 +20,17 @@ export class HeaderComponent {
 
   getUsers() {
     this.users = this.contadorService.getUsers();
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
+  goToAbout() {
+    this.router.navigate(['/about']);
+  }
+
+  goToContact() {
+    this.router.navigate(['/contact']);
   }
 }
