@@ -26,11 +26,11 @@ export class HeaderComponent {
     this.router.navigate(['/']);
   }
 
-  goToAbout() {
-    this.router.navigate(['/about']);
+  goToAbout(id: number) {
+    this.router.navigate(['/about', id]);
   }
 
-  goToContact() {
-    this.router.navigate(['/contact']);
+  goToContact(id: number) {
+    this.router.navigate(['/contact', id]);
   }
 }
