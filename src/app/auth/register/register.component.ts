@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -6,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  public nome: string = 'João das Couves';
-  public dataAtual: Date = new Date();
-  public valorDolar: number = 4.97;
+  public formulario!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.formulario = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      idade: ['', Validators.required]
+    })
+  }
+
+  onSubmitForm() {
+    console.log(this.formulario.value);
+  }
 }
